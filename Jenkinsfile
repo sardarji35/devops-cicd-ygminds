@@ -13,7 +13,7 @@ pipeline {
         stage('Build docker image'){
             steps{
                 script{
-                    sh 'docker buildx build -t ankitjagtap/devops-integration .'
+                    sh 'docker buildx build -t rupinder322/batch-23/devops-integration .'
                 }
             }
         }
@@ -21,10 +21,10 @@ pipeline {
             steps{
                 script{
                    withCredentials([string(credentialsId: 'dockerhub-pwd', variable: 'dockerhubpwd')]) {
-                   sh 'docker login -u rupinder322 -p ${30@roopINDE}'
+                   sh 'docker login -u rupinder322singh@gmail.com -p ${30@roopINDE}'
 
 }
-                   sh 'docker push ankitjagtap/devops-integration'
+                   sh 'docker push rupinder322/batch-23/devops-integration'
                 }
             }
         }
